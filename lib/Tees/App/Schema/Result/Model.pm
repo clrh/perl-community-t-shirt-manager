@@ -23,8 +23,8 @@ __PACKAGE__->add_columns(
 );
 
 __PACKAGE__->set_primary_key( 'modelid' );
-__PACKAGE__->has_many( images => 'App::Schema::Result::Image', 'imageid' );
-__PACKAGE__->has_many( items => 'App::Schema::Result::Item', 'itemid' );
+__PACKAGE__->has_many( images => 'Tees::App::Schema::Result::Image', 'imageid' );
+__PACKAGE__->has_many( items => 'Tees::App::Schema::Result::Item', 'itemid' );
 
 
 1;

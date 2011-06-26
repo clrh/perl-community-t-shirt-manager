@@ -28,7 +28,7 @@ __PACKAGE__->add_columns(
 );
 
 __PACKAGE__->set_primary_key( 'itemid' );
-__PACKAGE__->has_many( images => 'App::Schema::Result::Image', 'imageid' );
-__PACKAGE__->belongs_to( userid => 'App::Schema::Result::User' );
+__PACKAGE__->has_many( images => 'Tees::App::Schema::Result::Image', 'imageid' );
+__PACKAGE__->belongs_to( userid => 'Tees::App::Schema::Result::User' );
 
 1;

@@ -1,6 +1,13 @@
 package Tees::App;
 use Dancer ':syntax';
 use Data::Dumper qw{Dumper};
+use Tees::App::Schema;
+
+my $schema = Tees::App::Schema->connect('dbi:SQLite:tees.db');
+
+if ( not -e 'tees.db' ) {
+    $schema->deploy();
+}
 
 our $VERSION = '0.1';
 
@@ -13,15 +20,16 @@ get '/new/model' => sub {
 };
 
 post '/new/model' => sub {
-    open (MODELS, ">>models.log");
-    print MODELS params->{title}.",".params->{design_author}."\n";
-    close MODELS;
+    $schema->resultset('Model')->create({
+        description => params->{title}
+    });
     return redirect '/list/models';
 };
 
 sub list_models {
-  open (MODELS, "models.log");
-  my @lignes = <MODELS>;
+    my @models = ();
+    push @models, $_->description for $schema->resultset('Model')->all;
+    return @models;
 }
 
 get '/list/models' => sub {

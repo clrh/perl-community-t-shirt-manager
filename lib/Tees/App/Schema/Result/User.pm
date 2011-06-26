@@ -28,6 +28,6 @@ __PACKAGE__->add_columns(
 );
 
 __PACKAGE__->set_primary_key( 'userid' );
-__PACKAGE__->has_many( items => App::Schema::Result::Item, 'userid' );
+__PACKAGE__->has_many( items => 'Tees::App::Schema::Result::Item', 'userid' );
 
 1;
