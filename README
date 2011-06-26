@@ -1,4 +1,5 @@
 Tees-app
+--------
 
 Web interface to manage t-shirts of the perl community.
 
@@ -8,3 +9,25 @@ Case study for the hackatlon French Perl workshop 2011 (26/06/2011)
 - Claire Hernandez
 
 The first goal is to learn Dancer and others great things we discover this week end and try to do something usefull...
+
+Any feedback on the code or features is welcome! We are looking for a name too ;)
+
+Backlog:
+- admin can add a model (logo, designer, description etc.)
+- admin can add an event related to a model
+- connected user can add an item (article/object represented by a color, size, date, event where he found it etc., photos of him with the t-shirt...)
+- connected user can add an event if it does not exist (event could be validated later)
+- admin can import a csv file to populate database
+- all users (connected or not) can list models
+- all users can display a model (and see all items related)
+- all users can display a user (and see all items related)
+- all users can display an item (with all the photos)
+- all users can display home with 5 last items registered
+- all users can display home with 3 random items
+- admin can add a collection (represents a "stock" of t-shirts")
+
+Other informations:
+- today, 150 perl conferences
+- every year ~20 more
+- international website (first in english)
+
