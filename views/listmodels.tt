@@ -1,0 +1,10 @@
+
+<h1>All models</h1>
+
+<a href="/new/model">Add a model</a><br/>
+
+[% FOREACH model = models %]
+
+  <div class="model">[% model %]</div>
+
+[% END %]

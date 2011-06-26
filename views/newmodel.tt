@@ -1,0 +1,12 @@
+<h1>Add a model</h1>
+
+<form method="post" action="/new/model">
+
+  <fieldset>
+    <p><label for="title">Title:</label><input type="text" name="title" /><br /></p>
+    <p><label for="design_author">Design author:</label><input type="text" name="design_author" /><br /></p>
+  </fieldset>
+  <p><input type="submit" value="Add model" /></p>
+
+</form>
+

@@ -1,5 +1,6 @@
 package Tees::App;
 use Dancer ':syntax';
+use Data::Dumper qw{Dumper};
 
 our $VERSION = '0.1';
 
@@ -12,7 +13,9 @@ get '/new/model' => sub {
 };
 
 post '/new/model' => sub {
-    add_model (params->{title});
+    open (MODELS, ">>models.log");
+    print MODELS params->{title}.",".params->{design_author}."\n";
+    close MODELS;
     return redirect '/list/models';
 };
 
@@ -25,12 +28,5 @@ get '/list/models' => sub {
     my @models = list_models;
     return template 'listmodels' => {models => \@models};
 };
-
-sub add_model {
-  my ($title) = @_;
-  open (MODELS, ">>models.log");
-  print MODELS "$title\n";
-  close MODELS;
-}
 
 true;

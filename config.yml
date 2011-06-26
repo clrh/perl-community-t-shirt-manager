@@ -9,6 +9,10 @@ appname: "Tees::App"
 # views/layouts/main.tt)
 layout: "main"
 logger: "console"
+log: "debug"
+show_errors: 1
+startup_info: 1
+warnings: 1
 
 # when the charset is set to UTF-8 Dancer will handle for you
 # all the magic of encoding and decoding. You should not care
