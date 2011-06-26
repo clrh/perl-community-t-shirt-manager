@@ -3,7 +3,7 @@ package Tees::App::Schema::Result::Model;
 use base qw/DBIx::Class::Core/;
 
 __PACKAGE__->table( 'model' );
-__PACKAGE__->add_columns( 
+__PACKAGE__->add_columns(
     'modelid',
     {
         data_type => 'integer',
