@@ -15,11 +15,11 @@ get '/' => sub {
     template 'index';
 };
 
-get '/new/model' => sub {
+get '/model/new' => sub {
     template 'newmodel';
 };
 
-post '/new/model' => sub {
+post '/model/new' => sub {
     $schema->resultset('Model')->create({
         description => params->{title}
     });
@@ -32,7 +32,7 @@ sub list_models {
     return @models;
 }
 
-get '/list/models' => sub {
+get '/model/list' => sub {
     my @models = list_models;
     return template 'listmodels' => {models => \@models};
 };
